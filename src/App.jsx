@@ -7,12 +7,15 @@ import { Provider } from "react-redux";
 import store from "./store";
 
 const App = () => {
+
+
+  
   //  console.log("render App");
   return (
     <React.StrictMode>
       <Provider store={store}>
         <div className="wrapper">
-          <Empty />
+          <Empty/>
           <NavBar />
           <Map />
         </div>

@@ -14,7 +14,7 @@ const Select = () => {
 
   const latlongFunc = (e) => {
     let str = e.target.value;
-    // console.log(e.target.options[event.target.selectedIndex].text);
+    // console.log(e.target.options[window.event.target.selectedIndex].text);
     str = str.split(",");
 
     return str;
@@ -28,7 +28,10 @@ const Select = () => {
   };
 
   const setzoom = (e) => {
-    if (e.target.options[event.target.selectedIndex].text == "Select State") {
+    if (
+      e.target.options[window.event.target.selectedIndex].text ===
+      "Select State"
+    ) {
       setzoomFunc(4);
     } else {
       setzoomFunc(7);
@@ -43,32 +46,39 @@ const Select = () => {
   };
 
   const setAvg = (e) => {
-    if (statelist.includes(e.target.options[event.target.selectedIndex].text)) {
+    if (
+      statelist.includes(
+        e.target.options[window.event.target.selectedIndex].text
+      )
+    ) {
       for (let index = 0; index < stateAvgFinalList.length; index++) {
         if (
-          e.target.options[event.target.selectedIndex].text ==
+          e.target.options[window.event.target.selectedIndex].text ==
           Object.keys(stateAvgFinalList[index])
         ) {
           dispatch({
             type: "avgReducer",
             payload: parseInt(Object.values(stateAvgFinalList[index])),
           });
-          // console.log(stateAvgFinalList[index]);
+          console.log(stateAvgFinalList[index]);
         }
       }
     } else {
-      if (e.target.options[event.target.selectedIndex].text == "Select State") {
+      if (
+        e.target.options[window.event.target.selectedIndex].text ==
+        "Select State"
+      ) {
         dispatch({
           type: "avgReducer",
           payload: parseInt(countryAvgFinal),
         });
-        // console.log(countryAvgFinal);
+        console.log(countryAvgFinal);
       } else {
         dispatch({
           type: "avgReducer",
           payload: "No Data",
         });
-        // console.log("no data");
+        console.log("no data");
       }
     }
   };
@@ -97,7 +107,6 @@ const Select = () => {
           );
         })}
       </select>
-
     </div>
   );
 };

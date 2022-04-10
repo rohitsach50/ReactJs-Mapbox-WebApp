@@ -1,13 +1,12 @@
 import React, { useRef, useEffect} from 'react';
 import mapboxgl from 'mapbox-gl'; 
 
-import {useSelector,useDispatch } from 'react-redux';
+import {useSelector} from 'react-redux';
 import axios from 'axios'
 
 export default function Map() {
-  mapboxgl.accessToken = 'mapboxTokenHere';
+  mapboxgl.accessToken = 'pk.eyJ1Ijoicm9oaXRzYWNoNTAiLCJhIjoiY2t6enB3NnJ2MGMzNzNibmFwa3cwMHBzcSJ9.WGPktzbJ7B1eZSkMR2djKw';
 
- const dispatch = useDispatch();
   // const data = useSelector((state) => state.custom.data);
   const latlong = useSelector(state=>state.custom.latlong)
   const zoom = useSelector(state=>state.custom.zoom)
