@@ -1,5 +1,5 @@
 export const centroids = [
-  { State: "Select State", Longitude: 78.9629, Latitude: 20.5937 },
+  { State: "India", Longitude: 78.9629, Latitude: 20.5937 },
   {
     State: "Andaman & Nicobar Island",
     Longitude: 92.88957895607236,

@@ -33,7 +33,8 @@ router.get('/stations', async (req, res) => {
 
             return dat
         });
-        res.json(mapData["stations"])  // change here datatest to mapData
+        console.log(mapData);
+        res.send(mapData["stations"])  // change here datatest to mapData
     } catch (err) {
         res.send('Error' + err)
     }

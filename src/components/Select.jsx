@@ -14,7 +14,7 @@ const Select = () => {
 
   const latlongFunc = (e) => {
     let str = e.target.value;
-    // console.log(e.target.options[window.event.target.selectedIndex].text);
+    console.log(e.target.value);
     str = str.split(",");
 
     return str;
@@ -30,7 +30,7 @@ const Select = () => {
   const setzoom = (e) => {
     if (
       e.target.options[window.event.target.selectedIndex].text ===
-      "Select State"
+      "India"
     ) {
       setzoomFunc(4);
     } else {
@@ -66,7 +66,7 @@ const Select = () => {
     } else {
       if (
         e.target.options[window.event.target.selectedIndex].text ==
-        "Select State"
+        "India"
       ) {
         dispatch({
           type: "avgReducer",

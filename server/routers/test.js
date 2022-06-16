@@ -1,6 +1,6 @@
 import express from "express";
 const router = express.Router()
-// import Test from '../models/test2Schema.js'
+
 import fetch from 'node-fetch'
 globalThis.fetch = fetch
 let data = "eyJyZWdpb24iOiJsYW5kaW5nX2Rhc2hib2FyZCJ9"
@@ -30,22 +30,13 @@ let url = "https://app.cpcbccr.com/caaqms/caaqms_landing_map_all";
 router.get('/', async (req, res) => {
     try {
         let mapData = await post(url, data).then(response => response.json()).then(dat => dat);
-        // const test2 = new Test({ data: mapData })
-        // test2.save().then(() => { console.log("saved.."); })
-
-        // const test = await Test.find({ id: "623c9077beb16ada1dad1c4a" })
-        // res.json(test.slice(-1)[0].data[0])
+     
         res.json(mapData)
 
     } catch (err) {
         res.send('Error' + err)
     }
-    // console.log('Get request');
+
 })
-
-// router.get('/',async (req,res)=>{
-//     Test.find().then(test=>res.json(test))
-
-// })
 
 export default router

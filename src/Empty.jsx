@@ -20,13 +20,14 @@ const Empty = () => {
   );
 
   useEffect(() => {
-    axios.get("http://localhost:5000/data/stations").then((response) => {
-    
-      dispatch({
-        type: "dataReducer",
-        payload: response.data,
+    axios
+      .get("https://arcane-everglades-66784.herokuapp.com/data/stations")
+      .then((response) => {
+        dispatch({
+          type: "dataReducer",
+          payload: response.data,
+        });
       });
-    });
   }, []);
 
   if (data !== null) {
